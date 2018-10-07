@@ -1,32 +1,127 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  height: 100vh;
+  text-align: center;
+}
+.app__logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+.app__header {
+  /* background-color: #222; */
+  padding: 36px;
   color: white;
+  background-size: cover;
+  background-position: center;
 }
-
-.App-link {
-  color: #61dafb;
+.app__intro {
+  font-size: large;
 }
-
+.app__list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.app__button {
+  border: 0;
+  border-radius: 0;
+  padding: 10px 20px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  opacity: .8;
+  outline: 0;
+}
+.app__button:hover {
+  opacity: 1;
+}
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.message {
+  position: relative;
+  padding: 10px 60px 10px 20px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, .05);
+  text-align: left;
+  line-height: 1.7;
+}
+.message:nth-child(even) {
+  background-color: rgba(0, 0, 0, .025);
+}
+.message__author {
+  font-weight: 600;
+  margin-right: 10px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  width: 100%;
+}
+.form__row {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 20px 0;
+}
+.form__input {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  outline: 0;
+}
+.form__input:focus {
+  background-color: rgba(245, 243, 243, 0.5);
+}
+.form__button {
+  padding: 0 30px;
+  background-color: #000;
+  color: #fff;
+  border: 0;
+  border-radius: 0 5px 5px 0;
+  outline: 0;
+  cursor: pointer;
+}
+.form__button:hover {
+  background-color: rgba(0, 0, 0, .8);
+}
+.form__message {
+  width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+
+#loading {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
 }
